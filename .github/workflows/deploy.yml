@@ -25,4 +25,5 @@ jobs:
 
       - name: Deploy to server
         run: |
-          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd ${{ vars.WORK_DIR }} && git pull origin master"
+          scp ./index.html  ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ vars.WORK_DIR }}
+
